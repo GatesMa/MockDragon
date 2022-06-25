@@ -13,7 +13,7 @@ public class Test {
     public static void main(String[] args) {
 
         Student instance = MockDragon.createInstance(Student.class);
-
+        System.out.println(instance);
     }
 
 }
