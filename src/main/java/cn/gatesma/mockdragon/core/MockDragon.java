@@ -11,6 +11,9 @@ import java.lang.reflect.Type;
 public class MockDragon {
 
 
+    /**
+     * test
+     */
     public static <T> T createInstance(Class<T> clazz) {
         try {
             // new object
@@ -21,9 +24,8 @@ public class MockDragon {
                 Class<?> type = field.getType();
                 System.out.println("type: " + type);
                 Type genericType = field.getGenericType();
-                System.out.println(genericType);
                 System.out.println(genericType.getTypeName());
-
+                
 
             }
         } catch (Exception e) {
