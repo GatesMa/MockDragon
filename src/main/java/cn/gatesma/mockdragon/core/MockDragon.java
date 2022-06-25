@@ -1,7 +1,8 @@
 package cn.gatesma.mockdragon.core;
 
+import static cn.gatesma.mockdragon.constant.FieldConstant.TYPE_STRING;
+
 import java.lang.reflect.Field;
-import java.lang.reflect.Type;
 
 /**
  * 核心工具类
@@ -15,25 +16,26 @@ public class MockDragon {
      * test
      */
     public static <T> T createInstance(Class<T> clazz) {
+        // new object
+        T instance = null;
         try {
-            // new object
-            T instance = clazz.newInstance();
+            instance = clazz.newInstance();
             Field[] fields = clazz.getDeclaredFields();
             for (Field field : fields) {
+                field.setAccessible(true); //设置些属性是可以访问的
                 System.out.println("filedName: " + field.getName());
                 Class<?> type = field.getType();
                 System.out.println("type: " + type);
-                Type genericType = field.getGenericType();
-                System.out.println(genericType.getTypeName());
-                
+                if (type.getName().equals(TYPE_STRING)) {
+                    field.set(instance, "sfoisFj");
+                }
 
             }
+
         } catch (Exception e) {
             // TODO
-            return null;
         }
-
-        return null;
+        return instance;
     }
 
 }
