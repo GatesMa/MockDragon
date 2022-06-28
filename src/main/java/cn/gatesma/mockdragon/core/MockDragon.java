@@ -2,6 +2,8 @@ package cn.gatesma.mockdragon.core;
 
 import static cn.gatesma.mockdragon.constant.FieldConstant.TYPE_STRING;
 
+import cn.gatesma.mockdragon.domin.StringMockConfig;
+import cn.gatesma.mockdragon.utils.StringMockUtils;
 import java.lang.reflect.Field;
 
 /**
@@ -22,12 +24,12 @@ public class MockDragon {
             instance = clazz.newInstance();
             Field[] fields = clazz.getDeclaredFields();
             for (Field field : fields) {
-                field.setAccessible(true); //设置些属性是可以访问的
-                System.out.println("filedName: " + field.getName());
+                //设置属性是可以访问的
+                field.setAccessible(true);
                 Class<?> type = field.getType();
-                System.out.println("type: " + type);
-                if (type.getName().equals(TYPE_STRING)) {
-                    field.set(instance, "sfoisFj");
+                if (TYPE_STRING.equals(type.getName())) {
+                    StringMockConfig config = new StringMockConfig(field);
+                    field.set(instance, StringMockUtils.random(config));
                 }
 
             }
