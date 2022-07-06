@@ -8,8 +8,13 @@ package cn.gatesma.mockdragon.constant;
 public class FieldConstant {
 
     /**
-     * 字符串
+     * string
      */
     public static final String TYPE_STRING = "java.lang.String";
+
+    /**
+     * long
+     */
+    public static final String TYPE_LONG = "java.lang.Long";
 
 }

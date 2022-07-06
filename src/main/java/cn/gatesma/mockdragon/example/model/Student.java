@@ -13,6 +13,8 @@ public class Student {
 
     private Integer age;
 
+    private Long money;
+
     private List<String> classes;
 
     public String getStuId() {
@@ -39,11 +41,20 @@ public class Student {
         this.classes = classes;
     }
 
+    public Long getMoney() {
+        return money;
+    }
+
+    public void setMoney(Long money) {
+        this.money = money;
+    }
+
     @Override
     public String toString() {
         return "Student{"
                 + "stuId='" + stuId + '\''
                 + ", age=" + age
+                + ", money=" + money
                 + ", classes=" + classes
                 + '}';
     }
