@@ -31,7 +31,9 @@ public class MockDragon {
 
 
     /**
-     * test
+     * createInstance
+     *
+     * @param clazz 类
      */
     public static <T> T createInstance(Class<T> clazz) {
         // new object
@@ -44,32 +46,52 @@ public class MockDragon {
                 field.setAccessible(true);
                 Class<?> type = field.getType();
                 String typeName = type.getName();
-                if (TYPE_STRING.equals(typeName)) {
-                    StringMockConfig config = new StringMockConfig(field);
-                    field.set(instance, StringMockUtils.random(config));
-                } else if (TYPE_LONG.equals(typeName) || TYPE_LONG_ORIGIN.equals(typeName)) {
-                    LongMockConfig config = new LongMockConfig(field);
-                    field.set(instance, NumberMockUtils.random(config));
-                } else if (TYPE_SHORT.equals(typeName) || TYPE_SHORT_ORIGIN.equals(typeName)) {
-                    ShortMockConfig config = new ShortMockConfig(field);
-                    field.set(instance, NumberMockUtils.random(config));
-                } else if (TYPE_INTEGER.equals(typeName) || TYPE_INTEGER_ORIGIN.equals(typeName)) {
-                    IntegerMockConfig config = new IntegerMockConfig(field);
-                    field.set(instance, NumberMockUtils.random(config));
-                } else if (TYPE_DOUBLE.equals(typeName) || TYPE_DOUBLE_ORIGIN.equals(typeName)) {
-                    DoubleMockConfig config = new DoubleMockConfig(field);
-                    field.set(instance, NumberMockUtils.random(config));
-                } else if (TYPE_FLOAT.equals(typeName) || TYPE_FLOAT_ORIGIN.equals(typeName)) {
-                    FloatMockConfig config = new FloatMockConfig(field);
-                    field.set(instance, NumberMockUtils.random(config));
+                switch (typeName) {
+                    case TYPE_STRING: {
+                        StringMockConfig config = new StringMockConfig(field);
+                        field.set(instance, StringMockUtils.random(config));
+                        break;
+                    }
+                    case TYPE_LONG:
+                    case TYPE_LONG_ORIGIN: {
+                        LongMockConfig config = new LongMockConfig(field);
+                        field.set(instance, NumberMockUtils.random(config));
+                        break;
+                    }
+                    case TYPE_SHORT:
+                    case TYPE_SHORT_ORIGIN: {
+                        ShortMockConfig config = new ShortMockConfig(field);
+                        field.set(instance, NumberMockUtils.random(config));
+                        break;
+                    }
+                    case TYPE_INTEGER:
+                    case TYPE_INTEGER_ORIGIN: {
+                        IntegerMockConfig config = new IntegerMockConfig(field);
+                        field.set(instance, NumberMockUtils.random(config));
+                        break;
+                    }
+                    case TYPE_DOUBLE:
+                    case TYPE_DOUBLE_ORIGIN: {
+                        DoubleMockConfig config = new DoubleMockConfig(field);
+                        field.set(instance, NumberMockUtils.random(config));
+                        break;
+                    }
+                    case TYPE_FLOAT:
+                    case TYPE_FLOAT_ORIGIN: {
+                        FloatMockConfig config = new FloatMockConfig(field);
+                        field.set(instance, NumberMockUtils.random(config));
+                        break;
+                    }
+                    default:
+                        break;
                 }
 
             }
 
         } catch (Exception e) {
-            //
-            //
-            // TODO
+            /*
+             TODO
+            */
         }
         return instance;
     }

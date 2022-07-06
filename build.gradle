@@ -14,6 +14,10 @@ dependencies {
     compile 'org.apache.commons:commons-lang3:3.12.0'
     compile 'org.apache.commons:commons-collections4:4.4'
 
+    // lombok
+    compile 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor "org.projectlombok:lombok:1.18.22"
+
 }
 
 test {
