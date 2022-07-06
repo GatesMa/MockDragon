@@ -1,14 +1,18 @@
 package cn.gatesma.mockdragon.domin;
 
 import java.lang.reflect.Field;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
- * 字符串mock配置
+ * mock配置
  *
  * @author by gatesma.
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class IntegerMockConfig {
 
     private int min = 1;

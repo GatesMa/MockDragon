@@ -18,6 +18,8 @@ dependencies {
     compile 'org.projectlombok:lombok:1.18.22'
     annotationProcessor "org.projectlombok:lombok:1.18.22"
 
+    // slf4j
+    compile 'org.slf4j:slf4j-api:1.7.30'
 }
 
 test {
