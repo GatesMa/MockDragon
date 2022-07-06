@@ -22,8 +22,8 @@ public class NumberMockUtils {
         return (short) RandomUtils.nextInt(config.getMin(), config.getMax());
     }
 
-    public static Long random(IntegerMockConfig config) {
-        return RandomUtils.nextLong(config.getMin(), config.getMax());
+    public static Integer random(IntegerMockConfig config) {
+        return RandomUtils.nextInt(config.getMin(), config.getMax());
     }
 
     public static Double random(DoubleMockConfig config) {

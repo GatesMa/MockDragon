@@ -15,6 +15,12 @@ public class Student {
 
     private Long money;
 
+    private short size;
+
+    private double height;
+
+    private float weight;
+
     private List<String> classes;
 
     public String getStuId() {
@@ -49,13 +55,40 @@ public class Student {
         this.money = money;
     }
 
+    public short getSize() {
+        return size;
+    }
+
+    public void setSize(short size) {
+        this.size = size;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
     @Override
     public String toString() {
-        return "Student{"
-                + "stuId='" + stuId + '\''
-                + ", age=" + age
-                + ", money=" + money
-                + ", classes=" + classes
-                + '}';
+        return "Student{" +
+                "stuId='" + stuId + '\'' +
+                ", age=" + age +
+                ", money=" + money +
+                ", size=" + size +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", classes=" + classes +
+                '}';
     }
 }
