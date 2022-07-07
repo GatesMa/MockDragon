@@ -7,6 +7,7 @@ MockDragon 可以帮助mock数据，适合在写单测的时候用于mock数据�
 * mock基本类型数据
 * mock对象类型数据
 * 支持list、set范型数据生成
+* 支持基本类型、支持包装类
 * 支持多层嵌套对象类型数据生成
 * 更多高级功能开发中。。。
 
@@ -37,14 +38,25 @@ public class Test {
 
     public static void main(String[] args) {
         Student instance = MockDragon.createInstance(Student.class);
-        System.out.println(instance);
+        System.out.println(JSONObject.toJSONString(instance, true));
     }
+
 }
 ```
 
 结果：
 
 ```
-> Task :Test.main()
-Student(stuId=lES, age=9084, money=35029, size=7296, height=59.597520902463884, weight=23765.89, classes=[XliuUAiD, PDEv])
+{
+	"age":88835,
+	"classes":[
+		"noE",
+		"zk"
+	],
+	"height":93.70862928006656,
+	"money":93789,
+	"size":7527,
+	"stuId":"Z",
+	"weight":25034.79
+}
 ```

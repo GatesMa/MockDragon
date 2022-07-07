@@ -20,6 +20,10 @@ dependencies {
 
     // slf4j
     compile 'org.slf4j:slf4j-api:1.7.30'
+
+    // fastjson
+    compile 'com.alibaba:fastjson:1.2.76'
+
 }
 
 test {
